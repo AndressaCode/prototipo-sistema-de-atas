@@ -40,61 +40,61 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                 SizedBox(width: 10.0,),
                 // Texto tipo de reunião
                 Container(
-                    width: 200,
-                    height: 40,
+                  width: 200,
+                  height: 40,
                   decoration: BoxDecoration(
                     //color: Colors.brown[50],
                     borderRadius: BorderRadius.circular(5.0),
                   ),
-                    child: Text("Tipo de reunião", style: TextStyle(
-                        color: Colors.brown,
-                        fontSize: 15.0
-                    ),),
+                  child: Text("Tipo de reunião", style: TextStyle(
+                      color: Colors.brown,
+                      fontSize: 15.0
+                  ),),
                 ),
                 SizedBox(height: 20.0,),
                 // Selecionar tipo de reunião
                 Container(
                   width: 200,
                   height: 40,
-                    decoration: BoxDecoration(
-                      color: Colors.brown[50],
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                    child: Center(
-                      child: DropdownButton(
-                        items: _meetingType
-                            .map((value) => DropdownMenuItem(
-                          child: Text(
-                            value,
-                            style: TextStyle(color: Colors.brown),
-                          ),
-                          value: value,
-                        ))
-                            .toList(),
-                        onChanged: (selectedMeetingType){
-                          print('$selectedMeetingType');
-                          setState(() {
-                            selectedMeetingType = selectedMeetingType;
-                          });
-                          setState(() {
-                            selectedType = selectedMeetingType;
-                          });
-                        },
-                        value: selectedType,
-                        isExpanded: false,
-                        hint: Text('Selecione tipo de reunião',
-                          style: TextStyle(
-                            color: Colors.brown,
-                            fontSize: 13.0,
-                          ),
+                  decoration: BoxDecoration(
+                    color: Colors.brown[50],
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  child: Center(
+                    child: DropdownButton(
+                      items: _meetingType
+                          .map((value) => DropdownMenuItem(
+                        child: Text(
+                          value,
+                          style: TextStyle(color: Colors.brown),
+                        ),
+                        value: value,
+                      ))
+                          .toList(),
+                      onChanged: (selectedMeetingType){
+                        print('$selectedMeetingType');
+                        setState(() {
+                          selectedMeetingType = selectedMeetingType;
+                        });
+                        setState(() {
+                          selectedType = selectedMeetingType;
+                        });
+                      },
+                      value: selectedType,
+                      isExpanded: false,
+                      hint: Text('Selecione tipo de reunião',
+                        style: TextStyle(
+                          color: Colors.brown,
+                          fontSize: 13.0,
                         ),
                       ),
                     ),
+                  ),
                 ),
               ],
             ),
             // Dados de data e hora do agendamento de reuniao
-            // Texto Identificação da reunião
+            // Texto "Identificação da reunião"
             Center(
               child: Text("Identificação da reunião", style: TextStyle(
                 color: Colors.grey,
@@ -125,26 +125,29 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   ),
                   // Campo de data e hora
                   SizedBox(width: 5.0,),
-                  Container(
-                    width: 150.0,
-                    height: 30.0,
-                    color: Colors.brown[50],
-                    child: Center(
-                      child: TextField(
-                        //autofocus: true,
-                        keyboardType: TextInputType.text,
-                        style: TextStyle(
-                          color: Colors.brown[300],
-                          fontSize: 15.0,
+                  // ------------------------ INSERIR DATA
+                  Expanded(
+                    child: Container(
+                      height: 30.0,
+                      color: Colors.brown[50],
+                      child: Center(
+                        child: TextField(
+                          //autofocus: true,
+                          keyboardType: TextInputType.text,
+                          style: TextStyle(
+                            color: Colors.brown[300],
+                            fontSize: 15.0,
+                          ),
+                          decoration: InputDecoration(
+                            //border: InputBorder.none,
+                              hintText: "Insira data"
+                          ),
                         ),
-                        decoration: InputDecoration(
-                          //border: InputBorder.none,
-                            hintText: "Insira data"
-                        ),
-                    ),
+                      ),
                     ),
                   ),
                   SizedBox(width: 5.0,),
+                  // ------------------------ TEXTO HORA INICIO
                   Container(
                     width: 100.0,
                     height: 50.0,
@@ -158,27 +161,30 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   ),
                   // campo de hora inicio
                   SizedBox(width: 5.0,),
-                  Container(
-                    width: 100.0,
-                    height: 30.0,
-                    color: Colors.brown[50],
-                    child: Center(
-                      child: TextField(
-                      //autofocus: true,
-                      keyboardType: TextInputType.text,
-                      style: TextStyle(
-                        color: Colors.brown[300],
-                        fontSize: 15.0,
+                  // ------------------------ INSERIR HORA INICIO
+                  Expanded(
+                    child: Container(
+                      height: 30.0,
+                      color: Colors.brown[50],
+                      child: Center(
+                        child: TextField(
+                          //autofocus: true,
+                          keyboardType: TextInputType.text,
+                          style: TextStyle(
+                            color: Colors.brown[300],
+                            fontSize: 15.0,
+                          ),
+                          decoration: InputDecoration(
+                            //border: InputBorder.none,
+                              hintText: "HH : MM"
+                          ),
+                        ),
                       ),
-                      decoration: InputDecoration(
-                        //border: InputBorder.none,
-                          hintText: "HH : MM"
-                      ),
-                    ),
                     ),
                   ),
                   // campo de hora fim
                   SizedBox(width: 5.0,),
+                  // ------------------------ TEXTO HORA FINAL
                   Container(
                     width: 60.0,
                     height: 50.0,
@@ -191,27 +197,30 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                     ),
                   ),
                   SizedBox(width: 5.0,),
-                  Container(
-                    width: 100.0,
-                    height: 30.0,
-                    color: Colors.brown[50],
-                    child: Center(
-                      child: TextField(
-                        //autofocus: true,
-                        keyboardType: TextInputType.text,
-                        style: TextStyle(
-                          color: Colors.brown[300],
-                          fontSize: 15.0,
-                        ),
-                        decoration: InputDecoration(
-                          //border: InputBorder.none,
-                            hintText: "HH : MM"
+                  // ------------------------ INSERIR HORA FINAL
+                  Expanded(
+                    child: Container(
+                      height: 30.0,
+                      color: Colors.brown[50],
+                      child: Center(
+                        child: TextField(
+                          //autofocus: true,
+                          keyboardType: TextInputType.text,
+                          style: TextStyle(
+                            color: Colors.brown[300],
+                            fontSize: 15.0,
+                          ),
+                          decoration: InputDecoration(
+                            //border: InputBorder.none,
+                              hintText: "HH : MM"
+                          ),
                         ),
                       ),
                     ),
                   ),
                   // text local
                   SizedBox(width: 5.0,),
+                  // ------------------------ LOCAL DE REUNIÃO
                   Container(
                     width: 150.0,
                     height: 30.0,
@@ -227,21 +236,23 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   ),
                   // Campo de colocar local
                   SizedBox(width: 5.0,),
-                  Container(
-                    width: 150.0,
-                    height: 30.0,
-                    color: Colors.brown[50],
-                    child: Center(
-                      child: TextField(
-                        //autofocus: true,
-                        keyboardType: TextInputType.text,
-                        style: TextStyle(
-                          color: Colors.brown[300],
-                          fontSize: 15.0,
-                        ),
-                        decoration: InputDecoration(
-                          //border: InputBorder.none,
-                            hintText: "Local de reunião"
+                  // ------------------------ INSERIR LOCAL DE REUNIÃO
+                  Expanded(
+                    child: Container(
+                      height: 30.0,
+                      color: Colors.brown[50],
+                      child: Center(
+                        child: TextField(
+                          //autofocus: true,
+                          keyboardType: TextInputType.text,
+                          style: TextStyle(
+                            color: Colors.brown[300],
+                            fontSize: 15.0,
+                          ),
+                          decoration: InputDecoration(
+                            //border: InputBorder.none,
+                              hintText: "Local de reunião"
+                          ),
                         ),
                       ),
                     ),
@@ -250,7 +261,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
               ),
             ),
             SizedBox(height: 20.0,),
-            // OBJETIVO DA REUNIÃO
+            // ------------------------ TEXTO OBJETIVOS
             Center(
               child: Text("Objetivos", style: TextStyle(
                 color: Colors.grey,
@@ -260,6 +271,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
               ),
               ),
             ),
+            // ------------------------ TEXTO OBJETIVO DA REUNIÃO
             Container(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -274,19 +286,21 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                       ),),
                     ),
                   ),
-                  Container(
-                    width: 800.0,
-                    height: 30.0,
-                    color: Colors.brown[50],
-                    child: Center(
-                      child: TextField(
-                        keyboardType: TextInputType.text,
-                        style: TextStyle(
-                          color: Colors.brown[400],
-                          fontSize: 15.0,
-                        ),
-                        decoration: InputDecoration(
-                          hintText: "Informe objetivo para a reunião",
+                  // ------------------------ TEXTO OBJETIVO DA REUNIÃO
+                  Expanded(
+                    child: Container(
+                      height: 30.0,
+                      color: Colors.brown[50],
+                      child: Center(
+                        child: TextField(
+                          keyboardType: TextInputType.text,
+                          style: TextStyle(
+                            color: Colors.brown[400],
+                            fontSize: 15.0,
+                          ),
+                          decoration: InputDecoration(
+                            hintText: "Informe objetivo para a reunião",
+                          ),
                         ),
                       ),
                     ),
@@ -295,6 +309,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
               ),
             ),
             // Dados pauta e itens de pauta
+            // ------------------------ TEXTO PAUTA DA REUNIÃO
             Container(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -309,19 +324,21 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                       ),),
                     ),
                   ),
-                  Container(
-                    width: 800.0,
-                    height: 30.0,
-                    color: Colors.brown[50],
-                    child: Center(
-                      child: TextField(
-                        keyboardType: TextInputType.text,
-                        style: TextStyle(
-                          color: Colors.brown[400],
-                          fontSize: 15.0,
-                        ),
-                        decoration: InputDecoration(
-                          hintText: "Informe item da pauta",
+                  // ------------------------ INSERIR ITENS DE PAUTA
+                  Expanded(
+                    child: Container(
+                      height: 30.0,
+                      color: Colors.brown[50],
+                      child: Center(
+                        child: TextField(
+                          keyboardType: TextInputType.text,
+                          style: TextStyle(
+                            color: Colors.brown[400],
+                            fontSize: 15.0,
+                          ),
+                          decoration: InputDecoration(
+                            hintText: "Informe item da pauta",
+                          ),
                         ),
                       ),
                     ),

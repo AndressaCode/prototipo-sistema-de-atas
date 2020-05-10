@@ -157,7 +157,7 @@ class _HomeState extends State<Home> {
                 // Container com o botao sair
                 Container(
                   width: 100.0,
-                  height: 40.0,
+                  height: 30.0,
                   child: FlatButton.icon(
                     onPressed: () {
                       Navigator.push(
@@ -167,7 +167,7 @@ class _HomeState extends State<Home> {
                         ),
                       );
                     },
-                    color: Colors.brown[50],
+                    color: Colors.brown[200],
                     icon: Icon(Icons.exit_to_app, color: Colors.brown),
                     label: Text(
                       "Sair",
