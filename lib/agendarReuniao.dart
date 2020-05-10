@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AgendarReuniao extends StatefulWidget {
@@ -36,6 +37,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(height: 100.0,),
+                SizedBox(width: 10.0,),
                 // Texto tipo de reunião
                 Container(
                     width: 200,
@@ -44,14 +46,12 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                     //color: Colors.brown[50],
                     borderRadius: BorderRadius.circular(5.0),
                   ),
-                    child: Center(
-                      child: Text("Tipo de reunião", style: TextStyle(
+                    child: Text("Tipo de reunião", style: TextStyle(
                         color: Colors.brown,
                         fontSize: 15.0
-                      ),),
-                    ),
+                    ),),
                 ),
-                SizedBox(width: 20.0,),
+                SizedBox(height: 20.0,),
                 // Selecionar tipo de reunião
                 Container(
                   width: 200,
@@ -94,115 +94,241 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
               ],
             ),
             // Dados de data e hora do agendamento de reuniao
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // Text Data e hora
-                Container(
-                  width: 100.0,
-                  height: 50.0,
-                  //color: Colors.brown[100],
-                  child: Center(
-                    child: Text("Data/Hora", style: TextStyle(
-                        color: Colors.brown,
-                        fontSize: 15.0
-                    ),),
-                  ),
-                ),
-                // Campo de data e hora
-                SizedBox(width: 20.0,),
-                Container(
-                  width: 150.0,
-                  height: 50.0,
-                  color: Colors.brown[100],
-                  child: Center(
-                    child: Text(
-                      "Escolher data", style: TextStyle(
-                      color: Colors.brown
-                    ),
-                    ),
-                  ),
-                ),
-                SizedBox(width: 20.0,),
-                Container(
-                  width: 100.0,
-                  height: 50.0,
-                  //color: Colors.brown[100],
-                  child: Center(
-                    child: Text("Inicio", style: TextStyle(
-                        color: Colors.brown,
-                        fontSize: 15.0
-                    ),),
-                  ),
-                ),
-                // campo de hora inicio
-                SizedBox(width: 20.0,),
-                Container(
-                  width: 100.0,
-                  height: 50.0,
-                  color: Colors.brown[100],
-                  child: Center(
-                    child: Text("HH:MM", style: TextStyle(
-                        color: Colors.brown,
-                        fontSize: 15.0
-                    ),),
-                  ),
-                ),
-                // campo de hora fim
-                SizedBox(width: 20.0,),
-                Container(
-                  width: 60.0,
-                  height: 50.0,
-                  //color: Colors.brown[100],
-                  child: Center(
-                    child: Text("Até", style: TextStyle(
-                        color: Colors.brown,
-                        fontSize: 15.0
-                    ),),
-                  ),
-                ),
-                SizedBox(width: 20.0,),
-                Container(
-                  width: 100.0,
-                  height: 50.0,
-                  color: Colors.brown[100],
-                  child: Center(
-                    child: Text("HH:MM", style: TextStyle(
-                        color: Colors.brown,
-                        fontSize: 15.0
-                    ),),
-                  ),
-                ),
-                // text local
-                SizedBox(width: 20.0,),
-                Container(
-                  width: 150.0,
-                  height: 50.0,
-                  //color: Colors.brown[100],
-                  child: Center(
-                    child: Text(
-                      "Local de reunião", style: TextStyle(
-                      color: Colors.brown
-                    ),
-                    ),
-                  ),
-                ),
-                // Campo de colocar local
-                SizedBox(width: 20.0,),
-                Container(
-                  width: 150.0,
-                  height: 50.0,
-                  color: Colors.brown[100],
-                  child: Center(
-                    child: ,
-                  ),
-                ),
-              ],
+            // Texto Identificação da reunião
+            Center(
+              child: Text("Identificação da reunião", style: TextStyle(
+                color: Colors.grey,
+                fontSize: 12.0,
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.bold,
+              ),
+              ),
             ),
-            // Dados de objetivo da reuniao
-            Row(),
+            // COLOCAR UMA LINHA AQUI DIVIDER(),
+            SizedBox(height: 20.0,),
+            // TEXTO DATA/HORA
+            Container(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // Text Data e hora
+                  Container(
+                    width: 100.0,
+                    height: 50.0,
+                    //color: Colors.brown[100],
+                    child: Center(
+                      child: Text("Data/Hora", style: TextStyle(
+                          color: Colors.brown,
+                          fontSize: 15.0
+                      ),),
+                    ),
+                  ),
+                  // Campo de data e hora
+                  SizedBox(width: 5.0,),
+                  Container(
+                    width: 150.0,
+                    height: 30.0,
+                    color: Colors.brown[50],
+                    child: Center(
+                      child: TextField(
+                        //autofocus: true,
+                        keyboardType: TextInputType.text,
+                        style: TextStyle(
+                          color: Colors.brown[300],
+                          fontSize: 15.0,
+                        ),
+                        decoration: InputDecoration(
+                          //border: InputBorder.none,
+                            hintText: "Insira data"
+                        ),
+                    ),
+                    ),
+                  ),
+                  SizedBox(width: 5.0,),
+                  Container(
+                    width: 100.0,
+                    height: 50.0,
+                    //color: Colors.brown[100],
+                    child: Center(
+                      child: Text("Inicio", style: TextStyle(
+                          color: Colors.brown,
+                          fontSize: 15.0
+                      ),),
+                    ),
+                  ),
+                  // campo de hora inicio
+                  SizedBox(width: 5.0,),
+                  Container(
+                    width: 100.0,
+                    height: 30.0,
+                    color: Colors.brown[50],
+                    child: Center(
+                      child: TextField(
+                      //autofocus: true,
+                      keyboardType: TextInputType.text,
+                      style: TextStyle(
+                        color: Colors.brown[300],
+                        fontSize: 15.0,
+                      ),
+                      decoration: InputDecoration(
+                        //border: InputBorder.none,
+                          hintText: "HH : MM"
+                      ),
+                    ),
+                    ),
+                  ),
+                  // campo de hora fim
+                  SizedBox(width: 5.0,),
+                  Container(
+                    width: 60.0,
+                    height: 50.0,
+                    //color: Colors.brown[100],
+                    child: Center(
+                      child: Text("Até", style: TextStyle(
+                          color: Colors.brown,
+                          fontSize: 15.0
+                      ),),
+                    ),
+                  ),
+                  SizedBox(width: 5.0,),
+                  Container(
+                    width: 100.0,
+                    height: 30.0,
+                    color: Colors.brown[50],
+                    child: Center(
+                      child: TextField(
+                        //autofocus: true,
+                        keyboardType: TextInputType.text,
+                        style: TextStyle(
+                          color: Colors.brown[300],
+                          fontSize: 15.0,
+                        ),
+                        decoration: InputDecoration(
+                          //border: InputBorder.none,
+                            hintText: "HH : MM"
+                        ),
+                      ),
+                    ),
+                  ),
+                  // text local
+                  SizedBox(width: 5.0,),
+                  Container(
+                    width: 150.0,
+                    height: 30.0,
+                    //color: Colors.brown[100],
+                    child: Center(
+                      child: Text(
+                        "Local de reunião", style: TextStyle(
+                        color: Colors.brown,
+
+                      ),
+                      ),
+                    ),
+                  ),
+                  // Campo de colocar local
+                  SizedBox(width: 5.0,),
+                  Container(
+                    width: 150.0,
+                    height: 30.0,
+                    color: Colors.brown[50],
+                    child: Center(
+                      child: TextField(
+                        //autofocus: true,
+                        keyboardType: TextInputType.text,
+                        style: TextStyle(
+                          color: Colors.brown[300],
+                          fontSize: 15.0,
+                        ),
+                        decoration: InputDecoration(
+                          //border: InputBorder.none,
+                            hintText: "Local de reunião"
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20.0,),
+            // OBJETIVO DA REUNIÃO
+            Center(
+              child: Text("Objetivos", style: TextStyle(
+                color: Colors.grey,
+                fontSize: 12.0,
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.bold,
+              ),
+              ),
+            ),
+            Container(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 100.0,
+                    height: 50.0,
+                    child: Center(
+                      child: Text("Objetivo", style: TextStyle(
+                        color: Colors.brown,
+                        fontSize: 15.0,
+                      ),),
+                    ),
+                  ),
+                  Container(
+                    width: 800.0,
+                    height: 30.0,
+                    color: Colors.brown[50],
+                    child: Center(
+                      child: TextField(
+                        keyboardType: TextInputType.text,
+                        style: TextStyle(
+                          color: Colors.brown[400],
+                          fontSize: 15.0,
+                        ),
+                        decoration: InputDecoration(
+                          hintText: "Informe objetivo para a reunião",
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             // Dados pauta e itens de pauta
-            Row(),
+            Container(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 100.0,
+                    height: 50.0,
+                    child: Center(
+                      child: Text("Pauta", style: TextStyle(
+                        color: Colors.brown,
+                        fontSize: 15.0,
+                      ),),
+                    ),
+                  ),
+                  Container(
+                    width: 800.0,
+                    height: 30.0,
+                    color: Colors.brown[50],
+                    child: Center(
+                      child: TextField(
+                        keyboardType: TextInputType.text,
+                        style: TextStyle(
+                          color: Colors.brown[400],
+                          fontSize: 15.0,
+                        ),
+                        decoration: InputDecoration(
+                          hintText: "Informe item da pauta",
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             // Dados itens da pauta, o checkbox vai ser aqui, botao de remover aqui
             Column(),
             // Dados de responsavel pela reunião
