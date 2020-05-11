@@ -61,35 +61,34 @@ class _GerarAtaState extends State<GerarAta> {
         ),),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Botoes de tipo reuniao e usuario cadastrador
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 100.0,),
-              SizedBox(width: 10.0,),
-              // Texto tipo de reunião
+              SizedBox(height: 100.0, width: 10.0,),
+              // ------------------------------------ Texto "Reunião"
               Container(
-                width: 200,
-                height: 40,
+                width: 120,
+                height: 30,
                 decoration: BoxDecoration(
                   //color: Colors.brown[50],
                   borderRadius: BorderRadius.circular(5.0),
                 ),
-                child: Text("Reunião", style: TextStyle(
-                    color: Color(0xFF2c3e50),
-                    fontSize: 15.0,
-                    fontWeight: FontWeight.bold
-                ),),
+                child: Center(
+                  child: Text("Reunião", style: TextStyle(
+                      color: Color(0xFF2c3e50),
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold
+                  ),),
+                ),
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(height: 10.0,),
               // Selecionar tipo de reunião
               Container(
-                width: 200,
-                height: 40,
+                width: 160,
+                height: 30,
                 decoration: BoxDecoration(
                   color: Color(0xFFbdc3c7),
                   borderRadius: BorderRadius.circular(5.0),
@@ -411,11 +410,9 @@ class _GerarAtaState extends State<GerarAta> {
               ],
             ),
           ),
-
           /*----------------- FIM RESPONSÁVEL DE REUNIÃO ----------------*/
 
           /*------------------- PARTICIPANTES DE REUNIÃO ----------------*/
-
           Center(
             child: Text("Participantes de reunião", style: TextStyle(
               color: Colors.grey,
@@ -463,11 +460,9 @@ class _GerarAtaState extends State<GerarAta> {
               ],
             ),
           ),
-
           /*--------------- FIM PARTICIPANTES DE REUNIÃO ----------------*/
 
           /*---------------------- PENDÊNCIAS DE REUNIÃO ----------------*/
-
           Center(
             child: Text("Pendências geradas em reunião", style: TextStyle(
               color: Colors.grey,
@@ -534,7 +529,7 @@ class _GerarAtaState extends State<GerarAta> {
                 ),
                 // campo de hora inicio
                 SizedBox(width: 5.0,),
-                // ------------------------ INSERIR RESPONSAVEL DE RESOLUÇÃO DA PENDENCIA
+                // -------------- Inserir responsável de resolver a pendência
                 Expanded(
                   child: Container(
                     //padding: EdgeInsets.only(left: 10.0),
@@ -550,7 +545,7 @@ class _GerarAtaState extends State<GerarAta> {
                         ),
                         decoration: InputDecoration(
                           //border: InputBorder.none,
-                            hintText: "Unidade / Servidos (Dropdown)"
+                            hintText: "Unidade / Servidor (Dropdown)"
                         ),
                       ),
                     ),
@@ -600,12 +595,9 @@ class _GerarAtaState extends State<GerarAta> {
               ],
             ),
           ),
-
           /*------------------ FIM PENDÊNCIAS DE REUNIÃO ----------------*/
 
-
           /*------------------ INÍCIO DELIBERAÇÕES DE REUNIÃO -----------*/
-
           Container(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -621,7 +613,7 @@ class _GerarAtaState extends State<GerarAta> {
                     ),),
                   ),
                 ),
-                // ------------------------ INSERIR DELIBERAÇÃO
+                // ----------------------------- Inserir deliberação
                 Expanded(
                   child: Container(
                     //padding: EdgeInsets.only(left: 10.0),
@@ -645,13 +637,9 @@ class _GerarAtaState extends State<GerarAta> {
               ],
             ),
           ),
-
           /*--------------------- FIM DELIBERAÇÕES DE REUNIÃO -----------*/
 
-
           /*------------------ INÍCIO OBSERVAÇÕES DE REUNIÃO ------------*/
-
-
           Container(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -690,103 +678,152 @@ class _GerarAtaState extends State<GerarAta> {
               ],
             ),
           ),
-
-
           /*--------------------- FIM OBSERVAÇÕES DE REUNIÃO ------------*/
 
-
           /*------------------ INÍCIO PAUTA DE REUNIÃO -----------------*/
-
-          Expanded(
-            child: Column(
-              children: [
-                // TEXTO PAUTA, TEXTFIELD ADD ITEM DE PAUTA, BOTAO ADD
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 100.0,
-                      height: 50.0,
-                      child: Center(
-                        child: Text("Pauta", style: TextStyle(
-                          color: Color(0xFF2c3e50),
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.bold
-                        ),),
-                      ),
-                    ),
-                    // ------------------------ Inserir itens de pauta
-                    Expanded(
-                      child: Container(
-                        height: 30.0,
-                        color: Color(0xFFecf0f1),
-                        child: Center(
-                          child: TextField(
-                            controller: _itemController,
-                            keyboardType: TextInputType.text,
-                            style: TextStyle(
-                              color: Color(0xFF2c3e50),
-                              fontSize: 15.0,
-                            ),
-                            decoration: InputDecoration(
-                              hintText: "Novo item da pauta",
+          Flexible(
+            flex: 2,
+            child: Container(
+              height: 250.0,
+              child: Column(
+                children: [
+                  Flexible(
+                    flex: 1,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 100.0,
+                          height: 50.0,
+                          child: Center(
+                            child: Text("Pauta", style: TextStyle(
+                                color: Color(0xFF2c3e50),
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.bold
+                            ),),
+                          ),
+                        ),
+                        // ------------------------ Inserir itens de pauta
+                        Expanded(
+                          child: Container(
+                            height: 30.0,
+                            color: Color(0xFFecf0f1),
+                            child: Center(
+                              child: TextField(
+                                controller: _itemController,
+                                keyboardType: TextInputType.text,
+                                style: TextStyle(
+                                  color: Color(0xFF2c3e50),
+                                  fontSize: 15.0,
+                                ),
+                                decoration: InputDecoration(
+                                  hintText: "Novo item da pauta",
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                    SizedBox(width: 5.0,),
+                        SizedBox(width: 5.0,),
 
-                    // Boão adicionar item de pauta
+                        // Boão adicionar item de pauta
 
-                    Container(
-                      padding: EdgeInsets.only(left: 5.0),
-                      width: 70.0,
-                      height: 30.0,
-                      child: FlatButton(
-                        onPressed: _addItem,
-                        color: Color(0xFFbdc3c7),
-                        child: Text("ADD", style: TextStyle(
-                            color: Color(0xFF2c3e50),
-                            fontSize: 12.0
-                        ),),
-                      ),
+                        Container(
+                          padding: EdgeInsets.only(left: 5.0),
+                          width: 70.0,
+                          height: 30.0,
+                          child: FlatButton(
+                            onPressed: _addItem,
+                            color: Color(0xFFbdc3c7),
+                            child: Text("ADD", style: TextStyle(
+                                color: Color(0xFF2c3e50),
+                                fontSize: 12.0
+                            ),),
+                          ),
+                        ),
+                        SizedBox(width: 30.0,),
+                      ],
                     ),
-                    SizedBox(width: 30.0,),
-                  ],
-                ),
-                // ------------------------ LISTVIEW
-                Expanded(
-                  child: ListView.builder(
-                      scrollDirection: Axis.vertical,
-                      padding: EdgeInsets.only(top: 5.0),
-                      itemCount: _itensDePauta.length,
-                      itemBuilder: buildItem
+                  ),
+                  Flexible(
+                    flex: 1,
+                    child: ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        padding: EdgeInsets.only(top: 5.0),
+                        itemCount: _itensDePauta.length,
+                        itemBuilder: buildItem
+                    ),
+                  ),
+                  // TEXTO PAUTA, TEXTFIELD ADD ITEM DE PAUTA, BOTAO ADD
+
+               /* ------------------------ LISTVIEW
+               -------------------- FIM PAUTA DE REUNIÃO -----------------*/
+                ],
+              ),
+            ),
+          ),
+
+        /*-------------------- BOTÕES ANEXAR DOCS E OK -----------------*/
+          Container(
+            margin: EdgeInsets.all(10.0),
+            //color: Colors.grey,
+            width: 400.0,
+            height: 60.0,
+            child: Row(
+              children: [
+                SizedBox(width: 30.0,),
+                FlatButton.icon(
+                  onPressed: (){},
+                  color: Color(0xffd35300),
+                  icon: Icon(Icons.library_add, color: Colors.white),
+                  label: Text("Anexar documentos a ata", style: TextStyle(
+                      fontSize: 13.0,
+                      //fontWeight: FontWeight.bold,
+                      color: Colors.white
+                  ),
                   ),
                 ),
-
-                /*-------------------- FIM PAUTA DE REUNIÃO -----------------*/
-
+                SizedBox(width: 10.0,),
+                /*FlatButton.icon(
+                  onPressed: (){},
+                  color: Color(0xffd35300),
+                  icon: Icon(Icons.check_circle, color: Colors.white),
+                  label: Text("Ok", style: TextStyle(
+                      fontSize: 13.0,
+                      //fontWeight: FontWeight.bold,
+                      color: Colors.white
+                  ),
+                  ),
+                ),*/
               ],
             ),
           ),
-          FlatButton.icon(
-            onPressed: (){},
-            color: Color(0xFF2c3e50),
-            icon: Icon(Icons.event_available, color: Colors.white,),
-            label: Text("Agendar reunião", style: TextStyle(
-                fontSize: 15.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white
-            ),),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FlatButton.icon(
+                  onPressed: (){},
+                  color: Color(0xFF2c3e50),
+                  icon: Icon(Icons.picture_as_pdf, color: Colors.white,),
+                  label: Text("Preview", style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white
+                  ),),
+                ),
+                SizedBox(width: 10.0,),
+                FlatButton.icon(
+                  onPressed: (){},
+                  color: Colors.redAccent,
+                  icon: Icon(Icons.cancel, color: Colors.white,),
+                  label: Text("Cancelar", style: TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white
+                  ),),
+                ),
+              ]
           ),
-          /*FlatButton.icon(
-              onPressed: (){},
-              icon: Icon(Icons.add),
-              label: Text(
-                "Anexar documentos a ata"
-              ),
-          ),*/
+
         ],
       ),
     );
