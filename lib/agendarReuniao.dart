@@ -308,6 +308,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
             ),
           ),
           // ------------------------ TEXTO OBJETIVO DA REUNIÃO
+          // ------------------------ INSERIR OBJETIVO DA REUNIÃO
           Container(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -346,6 +347,44 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
             ),
           ),
           // Dados pauta e itens de pauta
+          // ------------------------ TEXTO RESPONSÁVEL REUNIÃO
+          Container(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 100.0,
+                  height: 50.0,
+                  child: Center(
+                    child: Text("Responsável", style: TextStyle(
+                      color: Colors.brown,
+                      fontSize: 15.0,
+                    ),),
+                  ),
+                ),
+                // ------------------------ NOME DO RESPONSÁVEL REUNIÃO
+                Expanded(
+                  child: Container(
+                    //padding: EdgeInsets.only(left: 10.0),
+                    height: 30.0,
+                    color: Colors.brown[50],
+                    child: Center(
+                      child: TextField(
+                        keyboardType: TextInputType.text,
+                        style: TextStyle(
+                          color: Colors.brown[400],
+                          fontSize: 15.0,
+                        ),
+                        decoration: InputDecoration(
+                          hintText: "Nome do responsável pela reunião",
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
           // ------------------------ TEXTO PAUTA DA REUNIÃO
           Container(
             child: Column(
@@ -403,11 +442,12 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
               ],
             ),
           ),
+          // ------------------------ LISTVIEW
           Expanded(
             child: ListView.builder(
               padding: EdgeInsets.only(top: 10.0),
                 itemCount: _itensDePauta.length,
-                itemBuilder: BuildItem
+                itemBuilder: buildItem
             ),
           ),
         ],
@@ -415,7 +455,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
     );
   }
 
-  Widget BuildItem(context, index){
+  Widget buildItem(context, index){
     return Dismissible(
       key: Key(DateTime.now().millisecondsSinceEpoch.toString()),
       background: Container(
@@ -440,6 +480,30 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
           });
         },
       ),
+      onDismissed: (direction) {
+        setState(() {
+          _lastRemoved = Map.from(_itensDePauta[index]);
+          _lastRemovedPos = index;
+          _itensDePauta.removeAt(index);
+
+          _savedData();
+
+          final snack = SnackBar(
+            content: Text("Item \"${_lastRemoved["title"]}\" removido"),
+            action: SnackBarAction(label: "Desfazer",
+            onPressed: () {
+              setState(() {
+                _itensDePauta.insert(_lastRemovedPos, _lastRemoved);
+                _savedData();
+              });
+            }),
+            duration: Duration(seconds: 4),
+          );
+
+          Scaffold.of(context).showSnackBar(snack);
+          }
+        );
+      },
     );
   }
 
