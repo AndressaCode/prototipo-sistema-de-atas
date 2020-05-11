@@ -53,7 +53,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.brown,
+        backgroundColor: Color(0xFF2c3e50),
         title: Text("Agendar Reunião", style: TextStyle(
           color: Colors.white,
           fontSize: 16.0,
@@ -78,8 +78,9 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                 ),
                 child: Center(
                   child: Text("Tipo de reunião", style: TextStyle(
-                      color: Colors.brown,
-                      fontSize: 15.0
+                      color: Color(0xFF2c3e50),
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold
                   ),),
                 ),
               ),
@@ -88,7 +89,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                 height: 30,
                 width: 180.0,
                 decoration: BoxDecoration(
-                  color: Color(0xFF2D6486),
+                  color: Color(0xFFecf0f1),
                   borderRadius: BorderRadius.circular(5.0),
                 ),
                 child: Center(
@@ -97,7 +98,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                         .map((value) => DropdownMenuItem(
                       child: Text(
                         value,
-                        style: TextStyle(color: Color(0xFF2D6486)),
+                        style: TextStyle(color: Color(0xFF2c3e50),),
                       ),
                       value: value,
                     ))
@@ -115,7 +116,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                     isExpanded: false,
                     hint: Text('Selecione tipo de reunião',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Color(0xFF2c3e50),
                         fontSize: 13.0,
                       ),
                     ),
@@ -149,8 +150,9 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   //color: Colors.brown[100],
                   child: Center(
                     child: Text("Data/Hora", style: TextStyle(
-                        color: Colors.brown,
-                        fontSize: 15.0
+                        color: Color(0xFF2c3e50),
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold
                     ),),
                   ),
                 ),
@@ -161,7 +163,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   child: Container(
                     //padding: EdgeInsets.only(left: 10.0),
                     height: 30.0,
-                    color: Colors.brown[50],
+                    color: Color(0xFFecf0f1),
                     child: Center(
                       child: TextField(
                         //autofocus: true,
@@ -186,8 +188,9 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   //color: Colors.brown[100],
                   child: Center(
                     child: Text("Inicio", style: TextStyle(
-                        color: Colors.brown,
-                        fontSize: 15.0
+                        color: Color(0xFF2c3e50),
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold
                     ),),
                   ),
                 ),
@@ -198,7 +201,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   child: Container(
                     //padding: EdgeInsets.only(left: 10.0),
                     height: 30.0,
-                    color: Colors.brown[50],
+                    color: Color(0xFFecf0f1),
                     child: Center(
                       child: TextField(
                         //autofocus: true,
@@ -224,8 +227,9 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   //color: Colors.brown[100],
                   child: Center(
                     child: Text("Até", style: TextStyle(
-                        color: Colors.brown,
-                        fontSize: 15.0
+                        color: Color(0xFF2c3e50),
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold
                     ),),
                   ),
                 ),
@@ -235,7 +239,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   child: Container(
                     //padding: EdgeInsets.only(left: 10.0),
                     height: 30.0,
-                    color: Colors.brown[50],
+                    color: Color(0xFFecf0f1),
                     child: Center(
                       child: TextField(
                         //autofocus: true,
@@ -262,8 +266,9 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   child: Center(
                     child: Text(
                       "Local de reunião", style: TextStyle(
-                      color: Colors.brown,
-
+                      color: Color(0xFF2c3e50),
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold
                     ),
                     ),
                   ),
@@ -275,7 +280,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   child: Container(
                     //padding: EdgeInsets.only(left: 10.0),
                     height: 30.0,
-                    color: Colors.brown[50],
+                    color: Color(0xFFecf0f1),
                     child: Center(
                       child: TextField(
                         //autofocus: true,
@@ -320,8 +325,9 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   height: 50.0,
                   child: Center(
                     child: Text("Objetivo", style: TextStyle(
-                      color: Colors.brown,
-                      fontSize: 15.0,
+                      color: Color(0xFF2c3e50),
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold
                     ),),
                   ),
                 ),
@@ -330,7 +336,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   child: Container(
                     //padding: EdgeInsets.only(left: 10.0),
                     height: 30.0,
-                    color: Colors.brown[50],
+                    color: Color(0xFFecf0f1),
                     child: Center(
                       child: TextField(
                         keyboardType: TextInputType.text,
@@ -374,8 +380,9 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   height: 50.0,
                   child: Center(
                     child: Text("Responsável", style: TextStyle(
-                      color: Colors.brown,
-                      fontSize: 15.0,
+                      color: Color(0xFF2c3e50),
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold
                     ),),
                   ),
                 ),
@@ -384,7 +391,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   child: Container(
                     //padding: EdgeInsets.only(left: 10.0),
                     height: 30.0,
-                    color: Colors.brown[50],
+                    color: Color(0xFFecf0f1),
                     child: Center(
                       child: TextField(
                         keyboardType: TextInputType.text,
@@ -426,8 +433,9 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   height: 50.0,
                   child: Center(
                     child: Text("Participantes", style: TextStyle(
-                      color: Colors.brown,
-                      fontSize: 15.0,
+                      color: Color(0xFF2c3e50),
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.bold
                     ),),
                   ),
                 ),
@@ -435,7 +443,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                   child: Container(
                     //padding: EdgeInsets.only(left: 10.0),
                     height: 30.0,
-                    color: Colors.brown[50],
+                    color: Color(0xFFecf0f1),
                     child: Center(
                       child: TextField(
                         keyboardType: TextInputType.text,
@@ -471,8 +479,9 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                       height: 50.0,
                       child: Center(
                         child: Text("Pauta", style: TextStyle(
-                          color: Colors.brown,
-                          fontSize: 15.0,
+                          color: Color(0xFF2c3e50),
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold
                         ),),
                       ),
                     ),
@@ -480,7 +489,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                     Expanded(
                       child: Container(
                         height: 30.0,
-                        color: Colors.brown[50],
+                        color: Color(0xFFecf0f1),
                         child: Center(
                           child: TextField(
                             controller: _itemController,
@@ -506,9 +515,9 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                       height: 30.0,
                       child: FlatButton(
                         onPressed: _addItem,
-                        color: Colors.brown[200],
+                        color: Color(0xFFbdc3c7),
                         child: Text("ADD", style: TextStyle(
-                            color: Colors.brown,
+                            color: Color(0xFF2c3e50),
                             fontSize: 12.0
                         ),),
                       ),
@@ -533,7 +542,7 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
           ),
           FlatButton.icon(
               onPressed: (){},
-            color: Colors.brown,
+            color: Color(0xFF2c3e50),
               icon: Icon(Icons.event_available, color: Colors.white,),
               label: Text("Agendar reunião", style: TextStyle(
                 fontSize: 15.0,

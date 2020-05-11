@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.brown,
+        backgroundColor: Color(0xFF2c3e50),
         //title: Text(
           //'Sistema Gerenciador de Reuniões',
           //style: TextStyle(color: Colors.white, fontSize: 20.0),
@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
               children: [
                 Text("Bem vindo ao Sistema de Atas Eletrônicas",
                 style: TextStyle(
-                  color: Colors.brown,
+                    color: Color(0xFF2c3e50),
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold
                 ),
@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
                   child: Text(
                     "O que deseja fazer?",
                     style: TextStyle(
-                      color: Colors.brown,
+                      color: Color(0xFF2c3e50),
                       fontSize: 20.0,
                       fontStyle: FontStyle.italic,
                     ),
@@ -62,7 +62,7 @@ class _HomeState extends State<Home> {
                   width: 400.0,
                   height: 200.0,
                   decoration: BoxDecoration(
-                    color: Colors.brown[50],
+                    color: Color(0xFFbdc3c7),
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                   child: Column(
@@ -85,10 +85,10 @@ class _HomeState extends State<Home> {
                               ),
                             );
                           },
-                          color: Colors.brown[100],
+                          color: Color(0xff34495e),
                           child: Text(
                             'Agendar reunião',
-                            style: TextStyle(color: Colors.brown),
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ),
@@ -105,10 +105,10 @@ class _HomeState extends State<Home> {
                               ),
                             );
                           },
-                          color: Colors.brown[100],
+                          color: Color(0xff34495e),
                           child: Text(
                             'Gerar ata de reunião',
-                            style: TextStyle(color: Colors.brown),
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ),
@@ -123,10 +123,10 @@ class _HomeState extends State<Home> {
                             ),
                             );
                           },
-                          color: Colors.brown[100],
+                          color: Color(0xff34495e),
                           child: Text(
                             'Visualizar agendamentos',
-                            style: TextStyle(color: Colors.brown),
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ),
@@ -143,10 +143,10 @@ class _HomeState extends State<Home> {
                               ),
                             );
                           },
-                          color: Colors.brown[100],
+                          color: Color(0xff34495e),
                           child: Text(
                             'Gerar relatórios',
-                            style: TextStyle(color: Colors.brown),
+                            style: TextStyle(color: Colors.white),
                           ),
                         ),
                       ),
@@ -167,7 +167,7 @@ class _HomeState extends State<Home> {
                         ),
                       );
                     },
-                    color: Color(0xff1C1452),
+                    color: Color(0xFF2c3e50),
                     icon: Icon(Icons.exit_to_app, color: Colors.white),
                     label: Text(
                       "Sair",
