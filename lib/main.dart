@@ -167,11 +167,11 @@ class _HomeState extends State<Home> {
                         ),
                       );
                     },
-                    color: Colors.brown[200],
-                    icon: Icon(Icons.exit_to_app, color: Colors.brown),
+                    color: Color(0xff1C1452),
+                    icon: Icon(Icons.exit_to_app, color: Colors.white),
                     label: Text(
                       "Sair",
-                      style: TextStyle(color: Colors.brown),
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
