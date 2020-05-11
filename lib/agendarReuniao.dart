@@ -41,12 +41,19 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
     });
   }
 
-  var selectedType;
+  var selectedType, selectedPessoa;
 
   List<String> _meetingType = <String>[
     'Ordinária',
     'Extraordinária',
     'Continuidade'
+  ];
+
+  List<String> _convocados = <String>[
+    'Andressa Silva de Souza',
+    'George Barbalho da Silva Sauro',
+    'Thiago Dutra',
+    'Wellington Costa',
   ];
 
   @override
@@ -355,12 +362,9 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
               ],
             ),
           ),
-
           /*--------------------- FIM OBJETIVO DA REUNIÃO ----------------*/
 
-
           /*--------------------- RESPONSÁVEL DE REUNIÃO ----------------*/
-
           // Texto "Responsável"
           Center(
             child: Text("Solicitante da reunião", style: TextStyle(
@@ -410,11 +414,9 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
               ],
             ),
           ),
-
           /*----------------- FIM RESPONSÁVEL DE REUNIÃO ----------------*/
 
           /*------------------- PARTICIPANTES DE REUNIÃO ----------------*/
-
           Center(
             child: Text("Participantes de reunião", style: TextStyle(
               color: Colors.grey,
@@ -444,15 +446,31 @@ class _AgendarReuniaoState extends State<AgendarReuniao> {
                     //padding: EdgeInsets.only(left: 10.0),
                     height: 30.0,
                     color: Color(0xFFecf0f1),
-                    child: Center(
-                      child: TextField(
-                        keyboardType: TextInputType.text,
-                        style: TextStyle(
-                          color: Colors.brown[400],
-                          fontSize: 15.0,
+                    child: DropdownButton(
+                      items: _convocados
+                          .map((value) => DropdownMenuItem(
+                        child: Text(
+                          value,
+                          style: TextStyle(color: Color(0xFF2c3e50),),
                         ),
-                        decoration: InputDecoration(
-                          hintText: "IMPLEMENTAR UM DROPDOWN AQUI COM ITENS JÁ CADASTRADOS",
+                        value: value,
+                      ))
+                          .toList(),
+                      onChanged: (selectedConvocados){
+                        print('$selectedConvocados');
+                        setState(() {
+                          selectedConvocados = selectedConvocados;
+                        });
+                        setState(() {
+                          selectedPessoa = selectedConvocados;
+                        });
+                      },
+                      value: selectedPessoa,
+                      isExpanded: true,
+                      hint: Text('Selecione participantes',
+                        style: TextStyle(
+                          color: Color(0xFF2c3e50),
+                          fontSize: 13.0,
                         ),
                       ),
                     ),
